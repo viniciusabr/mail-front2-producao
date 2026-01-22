@@ -60,7 +60,7 @@ export const toggleUserStatus = async (id, currentStatus) => {
 
 // Admin
 export const updateUserAdmin = async (id, isAdmin) => {
-  const { data } = await api.patch(`/api/users/${id}/admin`, { isAdmin });
+  const { data } = await api.patch(`/api/admin/users/${id}/admin`, { isAdmin });
   return data.user;
 };
 
