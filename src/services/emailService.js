@@ -54,7 +54,7 @@ export const getUsers = async () => {
 // Alternar status
 export const toggleUserStatus = async (id, currentStatus) => {
   const status = currentStatus === "ativo" ? "inativo" : "ativo";
-  const { data } = await api.patch(`/api/users/${id}/status`, { status });
+  const { data } = await api.patch(`/api/admin/users/${id}/status`, { status });
   return data.user;
 };
 
