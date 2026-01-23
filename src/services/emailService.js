@@ -47,8 +47,15 @@ export const register = async (payload) => {
 
 // Obter usuários
 export const getUsers = async () => {
-  const { data } = await api.get('/api/admin/users');
-  return data.users || data || [];
+  const token = localStorage.getItem("token");
+
+  const { data } = await api.get('/api/admin/users', {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  });
+
+  return data.users || [];
 };
 
 // Alternar status
