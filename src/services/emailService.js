@@ -71,7 +71,7 @@ export const updateUserAdmin = async (id, isAdmin) => {
     user_adm: isAdmin
   });
 
-  return data; // ou data.user, dependendo do seu controller
+  return data.user; // ou data.user, dependendo do seu controller
 };
 
 
