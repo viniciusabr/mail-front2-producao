@@ -67,12 +67,15 @@ export const toggleUserStatus = async (id, currentStatus) => {
 
 // Admin
 export const updateUserAdmin = async (id, isAdmin) => {
+  console.log("🔥🔥 FRONT ENVIANDO:", { user_adm: isAdmin });
+
   const { data } = await api.patch(`/api/admin/users/${id}/adm`, {
     user_adm: isAdmin
   });
 
-  return data.user; // ou data.user, dependendo do seu controller
+  return data.user;
 };
+
 
 
 // Perfil
