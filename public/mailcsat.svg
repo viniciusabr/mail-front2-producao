@@ -1,0 +1,28 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="blueGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1E90FF"/>
+      <stop offset="100%" stop-color="#0056D2"/>
+    </linearGradient>
+    <linearGradient id="greenGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2CFF6B"/>
+      <stop offset="100%" stop-color="#00B94A"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Envelope -->
+  <rect x="56" y="140" width="400" height="260" rx="28" fill="url(#blueGrad)"/>
+  <path d="M56 160L256 300L456 160" stroke="#ffffff" stroke-width="14" fill="none"/>
+  <path d="M56 400L200 260" stroke="#0B3C91" stroke-width="10"/>
+  <path d="M456 400L312 260" stroke="#0B3C91" stroke-width="10"/>
+
+  <!-- Smiley -->
+  <circle cx="256" cy="260" r="78" fill="#FFD93D"/>
+  <circle cx="230" cy="245" r="8" fill="#1F2A44"/>
+  <circle cx="282" cy="245" r="8" fill="#1F2A44"/>
+  <path d="M225 280C240 300 272 300 287 280" stroke="#1F2A44" stroke-width="8" stroke-linecap="round"/>
+
+  <!-- Check -->
+  <circle cx="345" cy="205" r="42" fill="url(#greenGrad)"/>
+  <path d="M327 205L340 218L365 190" stroke="white" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
