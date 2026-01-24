@@ -12,8 +12,7 @@ export default function useRegister() {
   const [emailInputError, setEmailInputError] = useState("");
   const [passwordInputError, setPasswordInputError] = useState("");
 
-
-  const [formError, setFormError] = useState('');
+  const [formError, setFormError] = useState("");
 
   const navigate = useNavigate();
 
@@ -65,27 +64,20 @@ export default function useRegister() {
 
     if (hasError) return;
 
-    console.log("Registro enviado:", {
-      name: nameInput,
-      email: emailInput,
-      password: passwordInput,
-    });
-
     try {
-      const result = await register({
+      await register({
         name: nameInput,
         email: emailInput,
         password: passwordInput,
       });
-      
-      toast.success('Registro realizado com sucesso! Peça ao seu líder para ativar o cadastro!')
+
+      toast.success("Registro realizado com sucesso! Peça ao seu líder para ativar o cadastro!");
       navigate("/auth/login");
 
     } catch (error) {
       console.error("Erro ao registrar:", error.response?.data || error.message);
-      throw error;
+      setFormError("Não foi possível realizar o cadastro.");
     }
-
   };
 
   return {
@@ -103,3 +95,4 @@ export default function useRegister() {
     setFormError
   };
 }
+
