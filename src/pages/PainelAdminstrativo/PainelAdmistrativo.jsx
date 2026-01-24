@@ -36,19 +36,23 @@ export default function PainelAdmistrativo() {
   };
 
   // alternar admin (true/false)
-  const toggleUserAdminStatus = async (id, currentAdm) => {
-    try {
-      const updatedUser = await updateUserAdmin(id, !currentAdm);
+ const toggleUserAdminStatus = async (id, currentAdm) => {
+  try {
+    const current = Boolean(currentAdm);     // garante true/false
+    const updatedUser = await updateUserAdmin(id, !current);
 
-      setUsers((prevUsers) =>
-        prevUsers.map((user) =>
-          user.id === id ? { ...user, user_adm: updatedUser.user_adm } : user
-        )
-      );
-    } catch (error) {
-      console.error("Erro ao atualizar admin:", error);
-    }
-  };
+    setUsers((prevUsers) =>
+      prevUsers.map((user) =>
+        user.id === id
+          ? { ...user, user_adm: updatedUser.user_adm }
+          : user
+      )
+    );
+  } catch (error) {
+    console.error("Erro ao atualizar admin:", error);
+  }
+};
+
 
   // aplica filtro pelo nome ou email
   const filteredUsers = users.filter(
