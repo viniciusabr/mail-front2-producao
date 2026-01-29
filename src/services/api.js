@@ -14,7 +14,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://independent-vibrancy-production.up.railway.app",
+  baseURL: "http://72.61.27.91:3000",
 });
 
 api.interceptors.request.use((config) => {
